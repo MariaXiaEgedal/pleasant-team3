@@ -2,10 +2,10 @@
 const { product } = Astro.props;
 ---
 
-<a href={"singel/" + product.id}>
+<a href={"product/" + product.slug}>
   <article>
     <img src={"img/" + product.image} alt={product.name} />
     <p>{product.name}</p>
-    <p>{product.price}</p>
+    <p>{product.price} DKK</p>
   </article>
 </a>
