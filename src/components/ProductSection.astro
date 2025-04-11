@@ -4,7 +4,7 @@ import Pcard from "../components/Pcard.astro";
 const curl =
   "https://vpfqjmzjywfkgiwoqdlh.supabase.co/rest/v1/products?select=*";
 const apikey =
-  "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZwZnFqbXpqeXdma2dpd29xZGxoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNzU1NzQsImV4cCI6MjA1OTg1MTU3NH0.bvvGDiKCL92VdcFupo0Ck3gmQyGanj9ozGVJ8KJsmmA";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZwZnFqbXpqeXdma2dpd29xZGxoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNzU1NzQsImV4cCI6MjA1OTg1MTU3NH0.bvvGDiKCL92VdcFupo0Ck3gmQyGanj9ozGVJ8KJsmmA";
 
 const options = {
   headers: {
@@ -27,7 +27,7 @@ console.log(data);
   {data.map((product) => product.category == "Kasket" && <Pcard {product} />)}
 </section>
 
-<h4>Hoodie</h4>
+<h4>Hoodie her</h4>
 <section>
   {data.map((product) => product.category == "Hoodie" && <Pcard {product} />)}
 </section>
