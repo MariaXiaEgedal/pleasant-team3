@@ -1,0 +1,100 @@
+<section class="hero">
+  <img
+    class="polaroid polaroid1"
+    src="../../public/img/polaroid1.png"
+    alt="Polaroid 1"
+  />
+  <img
+    class="polaroid polaroid2"
+    src="../../public/img/polaroid2.png"
+    alt="Polaroid 2"
+  />
+  <img
+    class="polaroid polaroid3"
+    src="../../public/img/polaroid3.png"
+    alt="Polaroid 3"
+  />
+
+  <div>
+    <h1 class="lookbook">LOOKBOOK</h1>
+    <a href="#kollektion" class="cta-button">Se kollektionen her</a>
+  </div>
+</section>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .hero {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 750px;
+    background-image: url("../../public/img/forsidevenstre.webp"),
+      url("../../public/img/forsidehojre.webp");
+    background-size:
+      50.5% 100%,
+      50.5% 100%;
+    background-position: left, right;
+    background-repeat: no-repeat;
+    margin: 40px 0;
+    flex: 1; /* Hver fylder 50% af flex-containeren */
+    object-fit: cover;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .lookbook {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 80px;
+    font-family: sans-serif;
+    z-index: 2;
+  }
+  .cta-button {
+    position: absolute;
+    top: 80%;
+    left: 41%;
+    margin-top: 30px;
+    padding: 15px 50px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #333;
+  }
+  .polaroid {
+    position: absolute;
+    z-index: 3;
+  }
+
+  .polaroid1 {
+    top: 65%;
+    left: 2%;
+    width: 200px;
+    height: auto;
+  }
+
+  .polaroid2 {
+    top: 8%;
+    right: 10%;
+    width: 160px;
+  }
+
+  .polaroid3 {
+    bottom: 2%;
+    right: 2%;
+  }
+</style>
