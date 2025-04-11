@@ -17,17 +17,56 @@ console.log(data);
 ---
 
 <h3>Favoritter fra kollektionen</h3>
-<h4>Skjorter</h4>
+
+<div class="collection-header">
+  <h4>Skjorter</h4>
+  <a href="#">Se hele kollektionen →</a>
+</div>
+
 <section>
   {data.map((product) => product.category == "skjorte" && <Pcard {product} />)}
 </section>
 
-<h4>Kasketter</h4>
+<div class="collection-header">
+  <h4>Kasketter</h4>
+  <a href="#">Se hele kollektionen →</a>
+</div>
+
 <section>
   {data.map((product) => product.category == "Kasket" && <Pcard {product} />)}
 </section>
 
-<h4>Hoodie her</h4>
+<div class="collection-header">
+  <h4>Hoodies</h4>
+  <a href="#">Se hele kollektionen →</a>
+</div>
+
 <section>
   {data.map((product) => product.category == "Hoodie" && <Pcard {product} />)}
 </section>
+
+<style>
+  .collection-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+  }
+
+  .collection-header a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .collection-header a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0px 50px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+</style>
