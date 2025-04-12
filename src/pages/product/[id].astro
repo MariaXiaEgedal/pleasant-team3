@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const curl =
+    "https://vpfqjmzjywfkgiwoqdlh.supabase.co/rest/v1/products?select=*";
+  const apikey =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZwZnFqbXpqeXdma2dpd29xZGxoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNzU1NzQsImV4cCI6MjA1OTg1MTU3NH0.bvvGDiKCL92VdcFupo0Ck3gmQyGanj9ozGVJ8KJsmmA";
+
+  const options = {
+    headers: {
+      apikey: apikey,
+    },
+  };
+  const response = await fetch(curl, options);
+  const data = await response.json();
+
+  return data.map((product) => {
+    return {
+      params: { id: product.slug },
+      props: { product },
+    };
+  });
+}
+
+const { id } = Astro.params;
+const { product } = Astro.props;
+---
+
+<Layout>
+  <h1>{product.name}</h1>
+  <p>{product.price} DKK</p>
+</Layout>

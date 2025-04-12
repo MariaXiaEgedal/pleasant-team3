@@ -9,11 +9,15 @@ import Footer from "../components/Footer.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://example.com/path/to/new-spirit-medium.css"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>Pleasant - Urban Sun</title>
   </head>
   <body>
-    <!-- <Header /> Når Header.astro komponentet er færdigt skal den bare af-kommenteres :)-->
+    <Header />
     <slot />
     <Footer />
   </body>
@@ -25,5 +29,13 @@ import Footer from "../components/Footer.astro";
     margin: 0;
     width: 100%;
     height: 100%;
+    background-color: #f3f0e8;
+    font-family: "New Spirit Medium", serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
   }
 </style>
