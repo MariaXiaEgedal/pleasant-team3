@@ -3,7 +3,69 @@
     <!-- indsæt video her -->
   </div>
 
-  <div class="tekst">
-    <!-- indsæt bevægende tekst her -->
+  <div class="marquee">
+    <div class="marquee__inner">
+      <span>PLEASANT UPCYCLED · URBAN SUN · </span>
+      <span>PLEASANT UPCYCLED · URBAN SUN · </span>
+      <span>PLEASANT UPCYCLED · URBAN SUN · </span>
+      <span>PLEASANT UPCYCLED · URBAN SUN · </span>
+      <span>PLEASANT UPCYCLED · URBAN SUN · </span>
+      <span>PLEASANT UPCYCLED · URBAN SUN · </span>
+    </div>
   </div>
 </section>
+
+<style>
+  .video-banner {
+    overflow: hidden;
+  }
+
+  .marquee {
+    position: relative;
+    background-color: black;
+    padding: 1rem 0;
+  }
+
+  .marquee::before,
+  .marquee::after {
+    content: "";
+    margin: 10px 0;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-image: repeating-linear-gradient(
+      to right,
+      white,
+      white 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  }
+
+  .marquee::before {
+    top: 0;
+  }
+
+  .marquee::after {
+    bottom: 0;
+  }
+
+  .marquee__inner {
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee__inner span {
+    letter-spacing: 3px;
+    color: white;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
