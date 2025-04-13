@@ -16,57 +16,99 @@ const data = await fetch(curl, options).then((response) => response.json());
 console.log(data);
 ---
 
-<h3>Favoritter fra kollektionen</h3>
+<div class="product-block">
+  <h3>Favoritter fra kollektionen</h3>
 
-<div class="collection-header">
-  <h4>Skjorter</h4>
-  <a href="#">Se hele kollektionen →</a>
+  <div class="collection">
+    <h4>Skjorter</h4>
+    <a href="#"
+      >Se hele kollektionen
+      <img src="/img/pil.svg" alt="pil" class="pil" />
+    </a>
+  </div>
+  <section>
+    {
+      data.map(
+        (product) => product.category == "skjorte" && <Pcard {product} />
+      )
+    }
+  </section>
+
+  <div class="collection">
+    <h4>Kasketter</h4>
+    <a href="#"
+      >Se hele kollektionen
+      <img src="/img/pil.svg" alt="pil" class="pil" />
+    </a>
+  </div>
+  <section>
+    {data.map((product) => product.category == "Kasket" && <Pcard {product} />)}
+  </section>
+
+  <div class="collection">
+    <h4>Hoodies</h4>
+    <a href="#"
+      >Se hele kollektionen
+      <img src="/img/pil.svg" alt="pil" class="pil" />
+    </a>
+  </div>
+  <section>
+    {data.map((product) => product.category == "Hoodie" && <Pcard {product} />)}
+  </section>
 </div>
-
-<section>
-  {data.map((product) => product.category == "skjorte" && <Pcard {product} />)}
-</section>
-
-<div class="collection-header">
-  <h4>Kasketter</h4>
-  <a href="#">Se hele kollektionen →</a>
-</div>
-
-<section>
-  {data.map((product) => product.category == "Kasket" && <Pcard {product} />)}
-</section>
-
-<div class="collection-header">
-  <h4>Hoodies</h4>
-  <a href="#">Se hele kollektionen →</a>
-</div>
-
-<section>
-  {data.map((product) => product.category == "Hoodie" && <Pcard {product} />)}
-</section>
 
 <style>
-  .collection-header {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 50px;
+  .product-block h3 {
+    font-size: 2.5rem;
+    margin-top: -10px;
+    margin-bottom: 25px;
   }
 
-  .collection-header a {
+  .collection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .collection h4 {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  .collection a {
+    font-size: 15px;
     text-decoration: none;
     color: black;
   }
 
-  .collection-header a:hover {
-    text-decoration: underline;
+  .collection a img.pil {
+    width: 15px;
+    height: auto;
+    transition: transform 0.2s ease;
+  }
+
+  .collection a:hover img.pil {
+    transform: translateX(4px);
+  }
+
+  .product-block {
+    margin: 5%;
   }
 
   section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0px 50px;
-    margin-bottom: 30px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(217px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+    margin-top: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    section {
+      display: flex;
+      overflow-x: auto;
+      gap: 18px;
+      padding-bottom: 10px;
+    }
   }
 </style>
