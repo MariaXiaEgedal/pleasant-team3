@@ -38,7 +38,7 @@
     background-size:
       50.5% 100%,
       50.5% 100%;
-    background-position: left, right;
+    background-position: left top; /* Fast placering */
     background-repeat: no-repeat;
     margin: 40px 0;
     flex: 1; /* Hver fylder 50% af flex-containeren */
@@ -96,5 +96,43 @@
   .polaroid3 {
     bottom: 2%;
     right: 2%;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      background-image: url("../../public/img/forsidemobile.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      margin-top: -160px;
+    }
+    .polaroid {
+      display: none;
+    }
+
+    .cta-button {
+      position: absolute;
+      top: 82%;
+      left: 25%;
+      margin-top: 25px;
+      padding: 10px 40px;
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+    }
+
+    .lookbook {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: black;
+      font-size: 60px;
+      font-family: sans-serif;
+      z-index: 2;
+    }
   }
 </style>
