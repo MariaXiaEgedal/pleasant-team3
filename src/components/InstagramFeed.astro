@@ -1,0 +1,65 @@
+---
+const images = [
+  "/img/insta1.webp",
+  "/img/insta2.webp",
+  "/img/insta3.webp",
+  "/img/insta4.webp",
+  "/img/insta5.webp",
+];
+---
+
+<section class="instagram-feed">
+  <p>#pleasantcommunity</p>
+  <div class="insta-wrapper">
+    {
+      images.map((src) => (
+        <div class="insta-card">
+          <img src={src} alt="Instagram post" />
+        </div>
+      ))
+    }
+  </div>
+  <p>
+    Følg os på instagram
+    <a
+      href="https://www.instagram.com/makelifepleasant"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      @makelifepleasant
+    </a>
+  </p>
+</section>
+
+<style>
+  .insta-wrapper {
+    display: flex;
+  }
+
+  .insta-card img {
+    width: 100%;
+  }
+
+  p {
+    padding-left: 5%;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 768px) {
+    .insta-wrapper {
+      overflow-x: auto;
+    }
+
+    .insta-card {
+      flex: 0 0 70%;
+    }
+  }
+</style>
