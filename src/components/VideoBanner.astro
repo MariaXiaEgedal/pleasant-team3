@@ -1,9 +1,51 @@
 <section class="video-banner">
   <div class="video">
-    <!-- indsæt video her -->
+    <video class="desktop-video" autoplay muted loop playsinline>
+      <source src="../../public/img/urbansun.mp4" type="video/mp4" />
+      Din browser understøtter ikke video.
+    </video>
+
+    <video class="mobile-video" autoplay muted loop playsinline>
+      <source src="../../public/img/mobile-version.mp4" type="video/mp4" />
+      Din browser understøtter ikke video.
+    </video>
   </div>
 
   <div class="tekst">
-    <!-- indsæt bevægende tekst her -->
+    <!-- Din bevægende tekst her -->
   </div>
 </section>
+
+<style>
+  .video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .desktop-video,
+  .mobile-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  .mobile-video {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .desktop-video {
+      display: none;
+    }
+
+    .mobile-video {
+      display: block;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      height: auto;
+    }
+  }
+</style>
