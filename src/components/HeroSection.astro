@@ -1,5 +1,16 @@
 <section class="hero">
   <img
+    class="bg-image bg-left"
+    src="../../public/img/forsidevenstre.webp"
+    alt="Forside venstre"
+  />
+  <img
+    class="bg-image bg-right"
+    src="../../public/img/forsidehojre.webp"
+    alt="Forside højre"
+  />
+
+  <img
     class="polaroid polaroid1"
     src="../../public/img/polaroid1.png"
     alt="Polaroid 1"
@@ -17,64 +28,39 @@
 
   <div>
     <h1 class="lookbook">LOOKBOOK</h1>
+    <img class="urbansunlogo" src="../../public/img/urbansunlogo.png" alt="" />
     <a href="#kollektion" class="cta-button">Se kollektionen her</a>
   </div>
 </section>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   .hero {
     position: relative;
     display: flex;
     width: 100vw;
     height: 750px;
-    background-image: url("../../public/img/forsidevenstre.webp"),
-      url("../../public/img/forsidehojre.webp");
-    background-size:
-      50.5% 100%,
-      50.5% 100%;
-    background-position: left top; /* Fast placering */
-    background-repeat: no-repeat;
     margin: 40px 0;
-    flex: 1; /* Hver fylder 50% af flex-containeren */
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .bg-image {
+    position: absolute;
+    width: 50.6%;
+    height: 100%;
     object-fit: cover;
+    top: 0;
+    z-index: 0;
   }
 
-  body {
-    overflow-x: hidden;
+  .bg-left {
+    left: 0;
   }
 
-  .lookbook {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 80px;
-    font-family: sans-serif;
-    z-index: 2;
-  }
-  .cta-button {
-    position: absolute;
-    top: 80%;
-    left: 41%;
-    margin-top: 30px;
-    padding: 15px 50px;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: background 0.3s ease;
+  .bg-right {
+    right: 0;
   }
 
-  .cta-button:hover {
-    background-color: #333;
-  }
   .polaroid {
     position: absolute;
     z-index: 3;
@@ -98,41 +84,83 @@
     right: 2%;
   }
 
+  .lookbook {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 80px;
+    font-family: sans-serif;
+    z-index: 2;
+  }
+
+  .urbansunlogo {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    z-index: 2;
+    width: 320px;
+  }
+
+  .cta-button {
+    position: absolute;
+    top: 80%;
+    left: 41%;
+    margin-top: 30px;
+    padding: 15px 50px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #333;
+  }
+
   @media (max-width: 768px) {
+    .bg-left,
+    .bg-right,
+    .polaroid {
+      display: none;
+    }
+
     .hero {
       background-image: url("../../public/img/forsidemobile.webp");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      overflow: hidden;
       margin-top: -160px;
-    }
-    .polaroid {
-      display: none;
-    }
-
-    .cta-button {
-      position: absolute;
-      top: 82%;
-      left: 25%;
-      margin-top: 25px;
-      padding: 10px 40px;
-      background-color: black;
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: background 0.3s ease;
+      display: block;
+      aspect-ratio: 4 / 6;
+      object-fit: cover;
+      height: auto;
     }
 
     .lookbook {
-      position: absolute;
       top: 60%;
+      font-size: 60px;
+    }
+
+    .cta-button {
+      top: 82%;
+      left: 25%;
+      padding: 10px 40px;
+      font-size: 1.1rem;
+    }
+
+    .urbansunlogo {
+      position: absolute;
+      top: 74%;
       left: 50%;
       transform: translate(-50%, -50%);
       color: black;
-      font-size: 60px;
-      font-family: sans-serif;
       z-index: 2;
+      width: 250px;
     }
   }
 </style>
