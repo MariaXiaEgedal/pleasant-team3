@@ -14,11 +14,18 @@ const images = [
     {
       images.map((src) => (
         <div class="insta-card">
-          <img src={src} alt="Instagram post" />
+          <a
+            href="https://www.instagram.com/makelifepleasant"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={src} alt="Instagram post" />
+          </a>
         </div>
       ))
     }
   </div>
+
   <p>
     Følg os på instagram
     <a
