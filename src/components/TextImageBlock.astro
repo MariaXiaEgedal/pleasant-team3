@@ -1,341 +1,203 @@
-<article class="text-image-grid">
-  <div class="grid-container">
-    <div class="text-box">
-      <h2>Skabt til sommerdage</h2>
-      <p>
-        Sol på brosten, grin i gaderne og venner ved din side. Vores
-        sommerlookbook fejrer fællesskab, byliv og tøj skabt med omtanke.
-        <br />
-        Bæredygtigt, ægte og klar til at blive levet i.
-      </p>
+<section class="summer-lookbook">
+  <div class="mobile-green-background"></div>
+  <div class="summer-lookbook__container">
+    <div class="summer-lookbook__left">
+      <div class="summer-lookbook__text">
+        <h2>Skabt til sommerdage</h2>
+        <p>
+          Sol på brosten, grin i gaderne og venner ved din side. Vores
+          sommerlookbook fejrer fællesskab, byliv og tøj skabt med omtanke.
+          Bæredygtigt, ægte og klar til at blive levet i.
+        </p>
+      </div>
+      <div class="summer-lookbook__image-wrapper">
+        <div class="summer-lookbook__image summer-lookbook__image--left">
+          <img src="../../img/Fletningpige.webp" alt="Model med fletninger" />
+        </div>
+      </div>
     </div>
-    <div class="image-wrapper">
-      <img src="../../img/Fletningpige.webp" alt="Model med fletninger" />
-    </div>
-  </div>
 
-  <div class="right-block">
-    <div class="ice-wrapper">
-      <img src="../../img/Ismand.webp" alt="Mand med is" />
-      <img
-        alt=""
-        class="badge"
-        loading="lazy"
-        width="220"
-        height="220"
-        src="//pleasant.dk/cdn/shop/files/Pleasant-upcycled-badge.svg?v=1705424891&width=320"
-      />
+    <div class="summer-lookbook__right">
+      <div class="summer-lookbook__image-wrapper-right">
+        <div class="summer-lookbook__image summer-lookbook__image--top">
+          <img
+            src="../../img/Ismand.webp"
+            alt="Mand med is"
+            class="ice-cream-man"
+          />
+          <img
+            class="summer-lookbook__badge"
+            src="//pleasant.dk/cdn/shop/files/Pleasant-upcycled-badge.svg?v=1705424891&width=320"
+            alt="Pleasant badge"
+          />
+        </div>
+      </div>
+
+      <div class="summer-lookbook__image summer-lookbook__image--bottom">
+        <div class="summer-lookbook__background"></div>
+        <img src="../../img/Kasketmand.webp" alt="Mand med ryg til" />
+      </div>
     </div>
   </div>
-
-  <div class="bottom-card">
-    <div class="pink-bg"></div>
-    <img
-      src="../../img/Kasketmand.webp"
-      alt="Mand med ryg til"
-      class="back-img"
-    />
-  </div>
-</article>
+</section>
 
 <style>
-  .text-image-grid {
+  .summer-lookbook {
+    width: 100%;
+  }
+
+  .summer-lookbook__container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 2rem 0rem;
-    gap: 4rem;
   }
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
+  .summer-lookbook__left,
+  .summer-lookbook__right {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
     position: relative;
-    max-width: 1000px;
-    max-width: 100%;
   }
 
-  .text-box {
-    background-color: #89beac;
-    padding: 2rem;
+  .summer-lookbook__text {
+    position: relative;
     z-index: 1;
-    width: 750px;
-    height: 550px;
-    margin: 0%;
-    align-items: center;
+    background-color: #89beac;
+    padding: 2rem 2.5rem 20rem 10%;
+    margin-right: 20px;
+    overflow: visible;
   }
 
-  .text-box h2 {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    margin-left: 100px;
+  .summer-lookbook__text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
   }
 
-  .text-box p {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    max-width: 800px;
-    text-align: left;
-    margin-left: 100px;
+  .summer-lookbook__text p {
+    line-height: 1.8;
   }
 
-  .image-wrapper {
-    position: absolute;
-    top: 70%;
-    left: 30%;
-    transform: translate(-50%, -30%);
+  .summer-lookbook__image-wrapper {
+    position: relative;
+    overflow: visible;
+    margin-top: -200px;
+    margin-left: 15%;
     z-index: 2;
   }
 
-  .image-wrapper img {
-    width: 500px;
+  .summer-lookbook__image--left img {
+    max-width: 450px;
+    height: auto;
+    display: block;
+  }
 
-    margin-left: 350px;
+  /* Højre side */
+
+  /* Højre øverset del */
+  .summer-lookbook__image-wrapper-right {
+    position: relative;
+    margin: 0 auto; /* Centrerer billedet */
+    padding-top: 5rem; /* Lidt luft i toppen */
+  }
+
+  .summer-lookbook__badge {
+    position: absolute;
+    width: 190px;
+    left: -68px;
+    bottom: -66px;
     z-index: 3;
   }
 
-  .right-block {
+  /* Højre nederste del */
+  .summer-lookbook__image--bottom {
     position: relative;
-    display: flex;
-    align-items: flex-end;
-    gap: 2rem; /* eller prøv med 3rem/4rem afhængigt af spacing */
-  }
-
-  .ice-wrapper {
-    position: relative;
-    display: inline-block;
-  }
-
-  .ice-wrapper img {
-    width: 470px;
-    max-height: 670px;
-    margin-left: 80px;
-  }
-
-  .badge {
-    position: absolute;
-
-    left: -300px; /* flytter mere til venstre */
-    bottom: -70px; /* Ændr denne værdi */
-
-    z-index: 4;
-  }
-  .bottom-card {
-    position: relative;
-    width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 100px; /* ← det her rykker det ned */
+    align-items: center;
+    margin-top: 3rem;
+    padding: 3rem 0;
   }
 
-  .pink-bg {
+  .summer-lookbook__background {
     position: absolute;
     background-color: #e9c5d2;
-    width: 980px;
-    height: 400px;
-    top: 700px; /* ← det her rykker kun boksen ned */
-    left: -205%; /* ← denne styrer vandret placering */
-    z-index: 0;
+    width: 130%;
+    height: 60%;
+    left: -30%;
+    top: 108px;
   }
 
-  .back-img {
-    width: 420px;
-    max-height: 550px;
-    z-index: 3;
+  .summer-lookbook__image--bottom img {
     position: relative;
-    top: 670px; /* ← det her rykker kun boksen ned */
-    left: -125%; /* ← denne styrer vandret placering */
+    z-index: 2;
   }
 
-  /* Tablet-størrelse (fra 769px til 1024px) */
-  @media (max-width: 1024px) and (min-width: 769px) {
-    .text-image-grid {
+  /* Mobile */
+  @media screen and (max-width: 929px) {
+    body {
+      overflow-x: hidden;
+    }
+    /* Grøn baggrund */
+    .mobile-green-background {
+      position: absolute;
+      width: 100%;
+      height: 950px;
+      background-color: #89beac;
+    }
+
+    .summer-lookbook__container {
       flex-direction: column;
       align-items: center;
-      padding: 1rem;
-      position: relative;
+      margin-bottom: 40px;
     }
 
-    .text-box {
-      max-width: 1000px;
-      height: 700px;
-      margin: 0;
-
-      padding: 1.5rem;
-      background-color: #89beac;
-      z-index: 2;
+    .summer-lookbook__text {
+      padding: 5%;
     }
 
-    .text-box {
-      padding: 1.5rem;
-      padding-left: 2rem; /* Tilføj denne linje */
-      max-width: 500px; /* eller hvad der passer */
+    .summer-lookbook__image-wrapper {
+      display: none;
     }
 
-    .text-box p {
-      margin-left: 0; /* Fjern tidligere margin */
-      padding-left: 0.8rem; /* Tilføj evt. lidt indrykning */
-      font-size: 0.9rem;
-    }
-    .text-box h2 {
-      margin-left: 0; /* Fjern tidligere margin */
-      padding-left: 0.8rem; /* Tilføj evt. lidt indrykning */
-      font-size: 2rem;
+    /* Ismand placeret til højre */
+    .summer-lookbook__image-wrapper-right {
+      padding-left: 100px;
     }
 
-    .image-wrapper {
-      display: none; /* skjuler Fletningpige */
+    .ice-cream-man {
+      max-width: 320px;
+      margin-top: -80px; /* Skubber billedet opad */
     }
 
-    .right-block {
-      position: relative;
-    }
-    .ice-wrapper {
-      position: relative;
-
-      top: -380px; /* rykker det opad så det overlapper det grønne */
-      z-index: 999;
-      left: 100px;
-    }
-    .ice-wrapper img {
-      margin-left: 0;
-      margin-top: -250px;
-      width: 100%;
-      max-width: 200px;
-      z-index: 3;
-    }
-    .badge {
+    /* Badge lidt til venstre men stadig overlappende */
+    .summer-lookbook__badge {
       position: absolute;
-
-      left: -90px; /* flyt længere til venstre */
-      bottom: -60px; /* justér evt. hvor langt nede det skal være */
-      z-index: 999;
-      width: 140px !important;
-      height: auto !important;
-      max-width: 100%;
+      margin-left: 150px;
+      width: 150px;
     }
 
-    .bottom-card {
+    /* Kasketmand med blå baggrund og centreret */
+    .summer-lookbook__image--bottom {
       position: relative;
-      width: 100%;
-      max-width: 270px;
-      height: 250px;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: -430px; /* Juster hvis nødvendigt */
-      margin-left: auto;
-      margin-right: auto;
-      z-index: 4; /* 🔹 Sørger for at det vises over det grønne */
-      background-color: #9dcce1; /* Lys blå */
-      padding: 2rem;
+      margin-top: 2rem;
+      padding: 2rem 0;
     }
 
-    .pink-bg {
-      display: none; /* skjuler pink boks */
-    }
-
-    .back-img {
-      top: 0;
-      left: 0;
-      position: relative;
+    .summer-lookbook__background {
+      background-color: #a7d5f3;
       width: 100%;
-      max-width: 200px;
-    }
-  }
-  @media (max-width: 768px) {
-    .text-image-grid {
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-      position: relative;
+      padding: 6rem 0;
+      top: -30px;
+      left: 0%;
     }
 
-    .text-box {
-      width: 100%;
-      height: 700px;
-      margin: 0;
-
-      padding: 1.5rem;
-      background-color: #89beac;
-      z-index: 2;
-    }
-
-    .text-box {
-      padding: 1.5rem;
-      padding-left: 2rem; /* Tilføj denne linje */
-      max-width: 500px; /* eller hvad der passer */
-    }
-
-    .text-box p {
-      margin-left: 0; /* Fjern tidligere margin */
-      padding-left: 0.8rem; /* Tilføj evt. lidt indrykning */
-      font-size: 0.9rem;
-    }
-    .text-box h2 {
-      margin-left: 0; /* Fjern tidligere margin */
-      padding-left: 0.8rem; /* Tilføj evt. lidt indrykning */
-      font-size: 2rem;
-    }
-
-    .image-wrapper {
-      display: none; /* skjuler Fletningpige */
-    }
-
-    .right-block {
-      position: relative;
-    }
-    .ice-wrapper {
-      position: relative;
-
-      top: -380px; /* rykker det opad så det overlapper det grønne */
-      z-index: 999;
-      left: 100px;
-    }
-    .ice-wrapper img {
-      margin-left: 0;
-      margin-top: -250px;
-      width: 100%;
-      max-width: 200px;
-      z-index: 3;
-    }
-    .badge {
-      position: absolute;
-
-      left: -90px; /* flyt længere til venstre */
-      bottom: -60px; /* justér evt. hvor langt nede det skal være */
-      z-index: 999;
-      width: 140px !important;
-      height: auto !important;
-      max-width: 100%;
-    }
-
-    .bottom-card {
-      position: relative;
-      width: 100%;
-      max-width: 270px;
-      height: 250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: -430px; /* Juster hvis nødvendigt */
-      margin-left: auto;
-      margin-right: auto;
-      z-index: 4; /* 🔹 Sørger for at det vises over det grønne */
-      background-color: #9dcce1; /* Lys blå */
-      padding: 2rem;
-    }
-
-    .pink-bg {
-      display: none; /* skjuler pink boks */
-    }
-
-    .back-img {
-      top: 0;
-      left: 0;
-      position: relative;
-      width: 100%;
-      max-width: 200px;
+    .summer-lookbook__image--bottom img {
+      max-width: 300px;
+      margin-top: -40px; /* Skubber billedet 20px op */
     }
   }
 </style>

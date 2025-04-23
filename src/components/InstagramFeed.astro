@@ -14,7 +14,13 @@ const images = [
     {
       images.map((src) => (
         <div class="insta-card">
-          <img src={src} alt="Instagram post" />
+          <a
+            href="https://www.instagram.com/makelifepleasant"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={src} alt="Instagram post" />
+          </a>
         </div>
       ))
     }
@@ -63,3 +69,344 @@ const images = [
     }
   }
 </style>
+<!-- <section class="text-image-grid">
+  <div class="grid-container">
+    <div class="text-box">
+      <h2>Skabt til sommerdage</h2>
+      <p>
+        Sol på brosten, grin i gaderne og venner ved din side. Vores
+        sommerlookbook fejrer fællesskab, byliv og tøj skabt med omtanke.
+        <br />
+        Bæredygtigt, ægte og klar til at blive levet i.
+      </p>
+    </div>
+    <div class="image-wrapper">
+      <img src="../../img/Fletningpige.webp" alt="Model med fletninger" />
+    </div>
+  </div>
+
+  <div class="right-block">
+    <div class="ice-wrapper">
+      <img src="../../img/Ismand.webp" alt="Mand med is" />
+      <img
+        alt=""
+        class="badge"
+        loading="lazy"
+        width="220"
+        height="220"
+        src="//pleasant.dk/cdn/shop/files/Pleasant-upcycled-badge.svg?v=1705424891&width=320"
+      />
+    </div>
+  </div>
+
+  <div class="bottom-card">
+    <div class="pink-bg"></div>
+    <img
+      src="../../img/Kasketmand.webp"
+      alt="Mand med ryg til"
+      class="back-img"
+    />
+  </div>
+</section>
+
+<style>
+  .text-image-grid {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0rem;
+    gap: 4rem;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    max-width: 1000px;
+    max-width: 100%;
+  }
+
+  .text-box {
+    background-color: #89beac;
+    padding: 2rem;
+    z-index: 1;
+    width: 750px;
+    height: 550px;
+    margin: 0%;
+    align-items: center;
+  }
+
+  .text-box h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-left: 100px;
+  }
+
+  .text-box p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    max-width: 800px;
+    text-align: left;
+    margin-left: 100px;
+  }
+
+  .image-wrapper {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -30%);
+    z-index: 2;
+  }
+
+  .image-wrapper img {
+    width: 500px;
+
+    margin-left: 350px;
+    z-index: 3;
+  }
+
+  .right-block {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem; /* eller prøv med 3rem/4rem afhængigt af spacing */
+  }
+
+  .ice-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .ice-wrapper img {
+    width: 470px;
+    max-height: 670px;
+    margin-left: 80px;
+  }
+
+  .badge {
+    position: absolute;
+
+    left: -300px; /* flytter mere til venstre */
+    bottom: -70px; /* Ændr denne værdi */
+
+    z-index: 4;
+  }
+  .bottom-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px; /* ← det her rykker det ned */
+  }
+
+  .pink-bg {
+    position: absolute;
+    background-color: #e9c5d2;
+    width: 980px;
+    height: 400px;
+    top: 700px; /* ← det her rykker kun boksen ned */
+    left: -205%; /* ← denne styrer vandret placering */
+    z-index: 0;
+  }
+
+  .back-img {
+    width: 420px;
+    max-height: 550px;
+    z-index: 3;
+    position: relative;
+    top: 670px; /* ← det her rykker kun boksen ned */
+    left: -125%; /* ← denne styrer vandret placering */
+  }
+
+  /* Tablet-størrelse (fra 769px til 1024px) */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .text-image-grid {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .text-box {
+      max-width: 1000px;
+      height: 700px;
+      margin: 0;
+
+      padding: 1.5rem;
+      background-color: #89beac;
+      z-index: 2;
+    }
+
+    .text-box {
+      padding: 1.5rem;
+      padding-left: 2rem; /* Tilføj denne linje */
+      max-width: 500px; /* eller hvad der passer */
+    }
+
+    .text-box p {
+      margin-left: 0; /* Fjern tidligere margin */
+      padding-left: 0.8rem; /* Tilføj evt. lidt indrykning */
+      font-size: 0.9rem;
+    }
+    .text-box h2 {
+      margin-left: 0; /* Fjern tidligere margin */
+      padding-left: 0.8rem; /* Tilføj evt. lidt indrykning */
+      font-size: 2rem;
+    }
+
+    .image-wrapper {
+      display: none; /* skjuler Fletningpige */
+    }
+
+    .right-block {
+      position: relative;
+    }
+    .ice-wrapper {
+      position: relative;
+
+      top: -380px; /* rykker det opad så det overlapper det grønne */
+      z-index: 999;
+      left: 100px;
+    }
+    .ice-wrapper img {
+      margin-left: 0;
+      margin-top: -250px;
+      width: 100%;
+      max-width: 200px;
+      z-index: 3;
+    }
+    .badge {
+      position: absolute;
+
+      left: -90px; /* flyt længere til venstre */
+      bottom: -60px; /* justér evt. hvor langt nede det skal være */
+      z-index: 999;
+      width: 140px !important;
+      height: auto !important;
+      max-width: 100%;
+    }
+
+    .bottom-card {
+      position: relative;
+      width: 100%;
+      max-width: 270px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -430px; /* Juster hvis nødvendigt */
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 4; /* 🔹 Sørger for at det vises over det grønne */
+      background-color: #9dcce1; /* Lys blå */
+      padding: 2rem;
+    }
+
+    .pink-bg {
+      display: none; /* skjuler pink boks */
+    }
+
+    .back-img {
+      top: 0;
+      left: 0;
+      position: relative;
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+  @media (max-width: 768px) {
+    .text-image-grid {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .text-box {
+      width: 100%;
+      height: 700px;
+      margin: 0;
+
+      padding: 1.5rem;
+      background-color: #89beac;
+      z-index: 2;
+    }
+
+    .text-box {
+      padding: 1.5rem;
+      padding-left: 2rem; /* Tilføj denne linje */
+      max-width: 500px; /* eller hvad der passer */
+    }
+
+    .text-box p {
+      margin-left: 0; /* Fjern tidligere margin */
+      padding-left: 0.8rem; /* Tilføj evt. lidt indrykning */
+      font-size: 0.9rem;
+    }
+    .text-box h2 {
+      margin-left: 0; /* Fjern tidligere margin */
+      padding-left: 0.8rem; /* Tilføj evt. lidt indrykning */
+      font-size: 2rem;
+    }
+
+    .image-wrapper {
+      display: none; /* skjuler Fletningpige */
+    }
+
+    .right-block {
+      position: relative;
+    }
+    .ice-wrapper {
+      position: relative;
+
+      top: -380px; /* rykker det opad så det overlapper det grønne */
+      z-index: 999;
+      left: 100px;
+    }
+    .ice-wrapper img {
+      margin-left: 0;
+      margin-top: -250px;
+      width: 100%;
+      max-width: 200px;
+      z-index: 3;
+    }
+    .badge {
+      position: absolute;
+
+      left: -90px; /* flyt længere til venstre */
+      bottom: -60px; /* justér evt. hvor langt nede det skal være */
+      z-index: 999;
+      width: 140px !important;
+      height: auto !important;
+      max-width: 100%;
+    }
+
+    .bottom-card {
+      position: relative;
+      width: 100%;
+      max-width: 270px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -430px; /* Juster hvis nødvendigt */
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 4; /* 🔹 Sørger for at det vises over det grønne */
+      background-color: #9dcce1; /* Lys blå */
+      padding: 2rem;
+    }
+
+    .pink-bg {
+      display: none; /* skjuler pink boks */
+    }
+
+    .back-img {
+      top: 0;
+      left: 0;
+      position: relative;
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+</style> -->
