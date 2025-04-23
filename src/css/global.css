@@ -13,3 +13,7 @@ h5,
 h6 {
   font-family: "Cream Black", serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
